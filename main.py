@@ -74,7 +74,7 @@ class Game(object):
             self.platform.y = 0
             
         #gravity 
-        self.player.y -= 9
+        self.player.y -= 90 * dt
         
         #ground collision
         while collide(self.player.collision, self.ground.collision):
