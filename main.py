@@ -1,7 +1,7 @@
 import pyglet
 from pyglet.window import key, mouse
 import config
-import util
+from util import *
 import sprites
 from collide import *
 
@@ -43,8 +43,8 @@ class Game(object):
         """Initialize the game"""
 
         # sprites
-        background_image = util.load_image(config.IMG_BACKGROUND)
-        ground_image = util.load_image(config.IMG_GROUND)
+        background_image = load_image(config.IMG_BACKGROUND)
+        ground_image = load_image(config.IMG_GROUND)
             
         self.background = sprites.GameSprite(background_image, 0, 0)
         self.ground = sprites.GameSprite(ground_image, 0, 0 )

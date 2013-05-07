@@ -1,6 +1,6 @@
 import pyglet
 import config
-import util
+from util import *
 from gamemath import vector_add
 from collide import *
 
@@ -35,7 +35,7 @@ class GameSprite(pyglet.sprite.Sprite):
 class Player(GameSprite):
 
     def __init__(self, x=0, y=0 ):
-        player_image = util.load_image(config.IMG_PLAYER)
+        player_image = load_image(config.IMG_PLAYER)
         GameSprite.__init__(self, player_image, x=x, y=y)
         self.speed = 450
         self.force_left = lambda p, dt: (-p.speed * dt, 0)
@@ -58,7 +58,7 @@ class Player(GameSprite):
 class Platform(GameSprite):
 
     def __init__(self, x=0, y=0 ):
-        platform_image = util.load_image(config.IMG_PLATFROM)
+        platform_image = load_image(config.IMG_PLATFROM)
         GameSprite.__init__(self, platform_image, x=x, y=y )
         self.power = 5
         self.force_up = lambda p, dt: (0, p.power * dt)
